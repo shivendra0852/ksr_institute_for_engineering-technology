@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Page</title>
+    <link
+      rel="stylesheet"
+      href="font_family/Webkit Clearfacebold Fonts/stylesheet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="font_family/webfontkit GCentra/stylesheet.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      h1{
+        font-family: clearfacebold;
+      }
+      label,ul,#pr{
+        font-family: centra_no2book;
+      }
+      ul{
+        font-size: 14px;
+      }
+      h2 {
+        font-family: clearfacebold;
+        font-weight: bolder;
+        font-size: 25px;
+        color: rgb(15, 15, 103);
+      }
+      p {
+        font-family: centra_no2book;
+        color: rgb(46, 46, 120);
+      }
+      #navbar {
+        display: flex;
+        margin: auto;
+        align-items: center;
+        width: 100%;
+        height: 90px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+          margin-bottom: 5px;
+      }
+      .line {
+        width: 1%;
+        height: 70px;
+        border-left: 1px solid black;
+      }
+      #navbar > div:first-child {
+        width: 10%;
+      }
+      #navbar > div:first-child > img {
+        width: 100%;
+      }
+      #navbar > div:nth-child(3) > h2 {
+        margin-bottom: -10px;
+      }
+      #navbar > span:nth-child(4) {
+        font-family: centra_no2book;
+        position: absolute;
+        right: 20px;
+        cursor: pointer;
+      }
+      #middle {
+        width: 100%;
+        height: 500px;
+        background: url("https://www.ksriet.ac.in/admin/uploads/slider/1592672598campus-1.jpg");
+        background-size: cover;
+        position: relative;
+        filter: blur(3px);
+      }
+      #extra_space{
+        width: 100%;
+        height: 30px;
+      }
+      #form{
+        width: 30%;
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 1px 40px;
+        padding-right: 35px;
+        position: absolute;
+        top: 150px;
+        left: 33%;
+        border-radius: 7px;
+        padding-bottom: 20px;
+      }
+      #form input{
+        width: 90%;
+        padding: 13px;
+        margin: 3px;
+        margin-bottom: 2px;
+        border-radius: 5px;
+        border: 1px solid rgb(0, 0, 0, 0.15);
+      }
+      button{
+        width: 97%;
+        margin-left: 3px;
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+        background-color: rgb(55, 55, 135);;
+        font-family: centra_no2book;
+      }
+      button:hover{
+        background-color: rgb(15, 15, 103);;
+        transition: 0.5s;
+      }
+      #abc{
+        font-family: centra_no2book;
+      }
+      u{
+        color: rgb(55, 55, 135);;
+        font-weight: bold;
+      }
+      u:hover{
+        cursor: pointer;
+        color: rgb(15, 15, 103);
+      }
+      ::placeholder{
+        font-family: centra_no2book;
+        font-size: 15px;
+      }
+      small {
+        font-family: centra_no2book;
+        margin-left: 2%;
+        color:rgb(15, 15, 103);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="navbar">
+        <div>
+          <img
+            src="https://img.jagranjosh.com/images/2022/June/962022/download%20(40).png"
+            alt="image"
+          />
+        </div>
+        <div class="line"></div>
+        <div>
+          <h2>K S R INSTITUTE FOR ENGINEERING AND TECHNOLOGY</h2>
+          <p>Tiruchengode, Namakkal, Tamil Nadu - (637215)</p>
+        </div>
+        <span>Telephone: + 91 4288 274773</span>
+      </div>
+      <div id="middle">
+        
+      </div>
+      <div id="extra_space"></div>
+        <div id="form">
+            <h1>Sign In here:-</h1>
+          <label>Email:</label><br>
+          <input type="email" id="email" placeholder="Enter your email here" />
+          <small id="empty_email"></small>
+          <br><br>
+          <label>Password:</label>
+          <input type="password" id="password" placeholder="Enter your password here">
+          <small id="empty_password"></small>
+          <button onclick="signIn()">SIGN IN</button>
+          <h3 id="abc">New user? <u onclick="signUp()">Create an account</u></h3>
+        </div>
+    </div>
+  </body>
+</html>
+<script>
+  let userDataArr=JSON.parse(localStorage.getItem("userData"))||[];
+    console.log(userDataArr);
+    let signIn = ()=>{
+        let email=document.getElementById("shiv_email").value;
+        let password=document.getElementById("shiv_password").value;
+        let getDataObj={
+            email,password
+        }
+       
+        let verifiedData=[];
+        let flag=true;
+        userDataArr.forEach((ele)=>{
+            if(getDataObj.email==""||(getDataObj.email!=ele.email)){
+                flag=false;
+                document.getElementById("empty_email").textContent="Correct Email Address is required";
+            }else{
+                document.getElementById("empty_email").textContent=null;
+            }
+            
+            if(getDataObj.password==""||(getDataObj.password!=ele.password)){
+                flag=false;
+                document.getElementById("empty_password").textContent="A valid password is required"
+                return;
+            }else{
+                document.getElementById("empty_password").textContent=null;
+            }
+            if(getDataObj.email==ele.email && getDataObj.password==ele.password){
+                verifiedData.push(ele);
+                return;
+            }
+        })
+
+        if(flag==true){
+            localStorage.setItem("verified_details",JSON.stringify(verifiedData));
+            window.location.href="";
+        }
+    }
+
+
+  function signUp(){
+        window.location.href="signupPage.html";
+    }
+</script>

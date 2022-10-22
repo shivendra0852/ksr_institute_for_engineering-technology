@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSR Institute for Engineering and Technology</title>
+    <link rel="stylesheet" href="font_family/Webkit Clearfacebold Fonts/stylesheet.css">
+    <link rel="stylesheet" href="font_family/webfontkit GCentra/stylesheet.css">
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        h2{
+            font-family: clearfacebold;
+            font-weight: bolder;
+            font-size: 25px;
+            color: rgb(15, 15, 103);
+        }
+        p{
+            font-family: centra_no2book;
+            color: rgb(46, 46, 120);
+        }
+        span{
+            font-family: centra_no2book;
+            color: white;
+            cursor: pointer;
+        }
+        #apply{
+            font-family: centra_no2book;
+            padding: 12px 15px;
+            font-weight: bolder;
+            margin-left: 160px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            background-color: rgb(55, 55, 135);
+            cursor: pointer;
+        }
+        #apply:hover{
+            background-color: rgb(15, 15, 103);
+        }
+        #navbar{
+            display: flex;
+            margin: auto;
+            align-items: center;
+            width: 100%;
+            height: 90px;
+            background-color: white;
+        }
+        .line{
+            width: 1%;
+            height: 70px;
+            border-left: 1px solid black;
+        }
+        #navbar>div:first-child{
+            width: 10%;
+        }
+        #navbar>div:first-child>img{
+            width: 100%;
+        }
+        #navbar>div:nth-child(3)>h2{
+            margin-bottom: -10px;
+        }
+        #navbar2{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 50px;
+            background-color: rgb(55, 55, 135);
+            position: relative;
+        }
+        #navbar2>span:first-child{
+            width: 2%;
+        }
+        #navbar2>span:first-child>img{
+            width: 100%;
+        }
+        #xyz{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+        }
+        #slides img{
+            width: 100%;
+            height: 500px;
+        }
+        #slider{
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+        #slides{
+            width: 1000%;
+            height: 500px;
+            display: flex;
+        }
+        #slides input{
+            display: none;
+        }
+        .slide{
+            width: 10%;
+            transition: 2s;
+        }
+        .nav_manual{
+            width: 100%;
+            margin-top: -40px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+        }
+        .manual_btn{
+            border-radius: 10px;
+            background-color: whitesmoke;
+            padding: 5px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .manual_btn:not(:last-child){
+            margin-right: 10px;
+        }
+        .manual_btn:hover{
+            background-color: rgb(55, 55, 135);
+        }
+        #radio_1:checked ~ .first{
+            margin-left: 0;
+        }
+        #radio_2:checked ~ .first{
+            margin-left: -10%;
+        }
+        #radio_3:checked ~ .first{
+            margin-left: -20%;
+        }
+        #radio_4:checked ~ .first{
+            margin-left: -30%;
+        }
+        #radio_5:checked ~ .first{
+            margin-left: -40%;
+        }
+        #radio_6:checked ~ .first{
+            margin-left: -50%;
+        }
+        #radio_7:checked ~ .first{
+            margin-left: -60%;
+        }
+        #radio_8:checked ~ .first{
+            margin-left: -70%;
+        }
+        .nav_auto{
+            width: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            margin-top: 460px;
+        }
+        .nav_auto div{
+            border-radius: 10px;
+            background-color: whitesmoke;
+            padding: 5px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .nav_auto div:not(:last-child){
+            margin-right: 10px;
+        }
+        #radio_1:checked ~ .nav_auto .auto_btn1{
+            background: white;
+        }
+        #radio_2:checked ~ .nav_auto .auto_btn2{
+            background: white;
+        }
+        #radio_3:checked ~ .nav_auto .auto_btn3{
+            background: white;
+        }
+        #radio_4:checked ~ .nav_auto .auto_btn4{
+            background: white;
+        }
+        #radio_5:checked ~ .nav_auto .auto_btn5{
+            background: white;
+        }
+        #radio_6:checked ~ .nav_auto .auto_btn6{
+            background: white;
+        }
+        #radio_7:checked ~ .nav_auto .auto_btn7{
+            background: white;
+        }
+        #radio_8:checked ~ .nav_auto .auto_btn8{
+            background: white;
+        }
+        #abcd{
+            width: 200px;
+            height: 35px;
+            background-color: white;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 30px;
+            right: 100px;
+        }
+        #login, #register{
+            width: 90px;
+            height: 35px;
+            font-weight: bolder;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #login{
+            color: white;
+            background-color: rgb(55, 55, 135);
+            border: none;
+        }
+        #login:hover{
+            background-color: rgb(15, 15, 103);
+        }
+        #register{
+            color: rgb(55, 55, 135);
+            background-color: white;
+            border-color: rgb(55, 55, 135);
+        }
+        #register:hover{
+            background-color: rgb(232, 227, 252);
+        }
+        #abcd{
+            display: none;
+        }
+        #tag{
+            width: 40%;
+            margin: auto;
+            text-align: center;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 30px;
+            font-weight: bolder;
+            color: rgb(96, 96, 96);
+            position: absolute;
+            top: 150px;
+            left: 30%;
+        }
+        h1{
+            margin-bottom: 0px;
+        }
+        #certification{
+            position: absolute;
+            top: 10px;
+            right: 5px;
+        }
+        #certification>img{
+            width: 100px;
+        }
+        #slider{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="navbar">
+            <div>
+                <img src="https://img.jagranjosh.com/images/2022/June/962022/download%20(40).png" alt="image">
+            </div>
+            <div class="line"></div>
+            <div>
+                <h2>K S R INSTITUTE FOR ENGINEERING AND TECHNOLOGY</h2>
+                <p>Tiruchengode, Namakkal, Tamil Nadu - (637215)</p>
+            </div>
+            <div><button onclick="func()" id="apply">APPLY  NOW</button></div>
+        </div>
+        <div id="navbar2">
+            <span><img src="https://www.nicepng.com/png/full/115-1153942_white-home-icon-png-white-home-logo-transparent.png" alt="image"></span>
+            <span>ACADEMIC</span>
+            <span>ADDMISSION</span>
+            <span>FACILITIES</span>
+            <span>DEPARTMENT</span>
+            <span>TRANING AND PLACEMENTS</span>
+            <span>EVENTS</span>
+            <span>RESEARCH</span>
+            <span>ABOUT US</span>
+        </div>
+
+        <!-- Image slider section -->
+        <div id="slider">
+            <div id="slides">
+                <input type="radio" name="radio_btn" id="radio_1">
+                <input type="radio" name="radio_btn" id="radio_2">
+                <input type="radio" name="radio_btn" id="radio_3">
+                <input type="radio" name="radio_btn" id="radio_4">
+                <input type="radio" name="radio_btn" id="radio_5">
+                <input type="radio" name="radio_btn" id="radio_6">
+                <input type="radio" name="radio_btn" id="radio_7">
+                <input type="radio" name="radio_btn" id="radio_8">
+                <div class="slide first">
+                    <img src="https://www.ksriet.ac.in/admin/uploads/slider/1592672598campus-1.jpg" alt="image">
+                </div>
+                <div class="slide">
+                    <img src="https://www.ksriet.ac.in/admin/uploads/slider/1649418640Naac-slide-2.jpg" alt="image">
+                </div>
+                <div class="slide">
+                    <img src="https://www.ksriet.ac.in/admin/uploads/slider/1593061243banner-new-2.jpg" alt="image">
+                </div>
+                <div class="slide">
+                    <img src="https://www.ksriet.ac.in/admin/uploads/slider/1589558927new-banner-4.jpg" alt="image">
+                </div>
+                <div class="slide">
+                    <img src="https://www.ksriet.ac.in/admin/uploads/slider/1592673030banner-4.jpg" alt="image">
+                </div>
+                <div class="slide">
+                    <img src="https://www.ksriet.ac.in/admin/uploads/slider/1593060975banner-new-5.jpg" alt="image">
+                </div>
+                <div class="slide">
+                    <img src="https://www.ksriet.ac.in/admin/uploads/slider/1593060646Lab_inauguration-new-1.jpg" alt="image">
+                </div>
+                <div class="slide">
+                    <img src="https://www.ksriet.ac.in/admin/uploads/slider/1593061107banner-new-6.jpg" alt="image">
+                </div>
+                <div class="nav_auto">
+                    <div class="auto_btn1"></div>
+                    <div class="auto_btn2"></div>
+                    <div class="auto_btn3"></div>
+                    <div class="auto_btn4"></div>
+                    <div class="auto_btn5"></div>
+                    <div class="auto_btn6"></div>
+                    <div class="auto_btn7"></div>
+                    <div class="auto_btn8"></div>
+                </div>
+            </div>
+            <div class="nav_manual">
+                <label for="radio_1" class="manual_btn"></label>
+                <label for="radio_2" class="manual_btn"></label>
+                <label for="radio_3" class="manual_btn"></label>
+                <label for="radio_4" class="manual_btn"></label>
+                <label for="radio_5" class="manual_btn"></label>
+                <label for="radio_6" class="manual_btn"></label>
+                <label for="radio_7" class="manual_btn"></label>
+                <label for="radio_8" class="manual_btn"></label>
+            </div>
+        </div>
+            
+        <div id="abcd">
+            <button onclick="logIn()" id="login">LOGIN</button>
+            <button onclick="signUp()" id="register">REGISTER</button>
+        </div>
+        <div id="tag">
+            <h1>GET READY TO SPRING FEAST</h1>
+            <div>The National Level Symphosium</div>
+        </div>
+        <div id="certification">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzrloGTRvQ_jHCygOrK7Vzjz-jpmLyTvN4YA&usqp=CAU" alt="certification">
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    var counter = 1;
+    setInterval(function(){
+        document.getElementById('radio' + counter).checked = true;
+        counter++;
+        if(counter>4){
+            counter=1;
+        }
+    },5000);
+    function func(){
+        document.getElementById("apply").style.display="none";
+        document.getElementById("abcd").style.display="block";
+    }
+    function logIn(){
+        window.location.href="signinPage.html";
+    }
+    function signUp(){
+        window.location.href="signupPage.html";
+    }
+</script>

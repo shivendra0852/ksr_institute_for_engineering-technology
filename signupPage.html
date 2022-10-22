@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Page</title>
+    <link
+      rel="stylesheet"
+      href="font_family/Webkit Clearfacebold Fonts/stylesheet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="font_family/webfontkit GCentra/stylesheet.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      h1{
+        font-family: clearfacebold;
+      }
+      label,ul,#pr{
+        font-family: centra_no2book;
+      }
+      ul{
+        font-size: 14px;
+      }
+      h1{
+        margin-bottom: -5px;
+      }
+      h2 {
+        font-family: clearfacebold;
+        font-weight: bolder;
+        font-size: 25px;
+        color: rgb(15, 15, 103);
+      }
+      p {
+        font-family: centra_no2book;
+        color: rgb(46, 46, 120);
+      }
+      #navbar {
+        display: flex;
+        margin: auto;
+        align-items: center;
+        width: 100%;
+        height: 90px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+          margin-bottom: 5px;
+      }
+      .line {
+        width: 1%;
+        height: 70px;
+        border-left: 1px solid black;
+      }
+      #navbar > div:first-child {
+        width: 10%;
+      }
+      #navbar > div:first-child > img {
+        width: 100%;
+      }
+      #navbar > div:nth-child(3) > h2 {
+        margin-bottom: -10px;
+      }
+      #navbar > span:nth-child(4) {
+        font-family: centra_no2book;
+        position: absolute;
+        right: 20px;
+        cursor: pointer;
+      }
+      #middle {
+        width: 100%;
+        height: 900px;
+        background: url("https://www.ksriet.ac.in/admin/uploads/slider/1592672598campus-1.jpg");
+        background-size: cover;
+        position: relative;
+        filter: blur(3px);
+      }
+      #extra_space{
+        width: 100%;
+        height: 30px;
+      }
+      #form{
+        width: 30%;
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 1px 40px;
+        padding-right: 35px;
+        position: absolute;
+        top: 150px;
+        left: 33%;
+        border-radius: 7px;
+        padding-bottom: 20px;
+      }
+      #form input{
+        width: 90%;
+        padding: 15px;
+        margin: 3px;
+        margin-bottom: 2px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 5px;
+        border: 1px solid rgb(0, 0, 0, 0.15);
+      }
+      button{
+        width: 97%;
+        margin-left: 3px;
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+        background-color: rgb(55, 55, 135);;
+        font-family: centra_no2book;
+      }
+      button:hover{
+        background-color: rgb(15, 15, 103);
+        transition: 0.5s;
+      }
+      #abc{
+        font-family: centra_no2book;
+      }
+      u{
+        color: rgb(55, 55, 135);;
+        font-weight: bold;
+      }
+      u:hover{
+        cursor: pointer;
+        color: rgb(15, 15, 103);;
+      }
+      ::placeholder{
+        font-family: centra_no2book;
+        font-size: large;
+      }
+      small {
+        font-family: centra_no2book;
+        margin-left: 2%;
+        color:rgb(15, 15, 103);
+      }
+      #pr,li{
+        color: rgb(78, 69, 69);
+      }
+      #pr{
+        margin-top: 20px;
+        margin-bottom: -5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="navbar">
+        <div>
+          <img
+            src="https://img.jagranjosh.com/images/2022/June/962022/download%20(40).png"
+            alt="image"
+          />
+        </div>
+        <div class="line"></div>
+        <div>
+          <h2>K S R INSTITUTE FOR ENGINEERING AND TECHNOLOGY</h2>
+          <p>Tiruchengode, Namakkal, Tamil Nadu - (637215)</p>
+        </div>
+        <span>Telephone: + 91 4288 274773</span>
+      </div>
+      <div id="middle">
+        
+      </div>
+      <div id="extra_space"></div>
+        <div id="form">
+            <h1>Create an account:-</h1>
+          <input type="name" id="name" placeholder="Full Name" />
+          <small id="empty_name"></small>
+          <input type="email" id="email" placeholder="Enter your email here" />
+          <small id="empty_email"></small>
+          <input type="number" id="phone" placeholder="Contact No." />
+          <small id="empty_phone"></small>
+          <input type="text" id="address" placeholder="Enter your Address here" />
+          <small id="empty_address"></small>
+          <input type="number" id="pincode" placeholder="Pincode (6 digits)" />
+          <small id="empty_pincode"></small>
+          <div id="pr">Password strength:</div>
+          <ul>
+            <li>Use 8 or more characters.</li>
+            <li>Use a minimum of one letter.</li>
+            <li>Use a minimum of one number.</li>
+          </ul>
+          <input type="password" id="password" placeholder="Set Password" />
+          <small id="empty_password"></small>
+          <input type="password" id="cpassword" placeholder="Confirm Password"/>
+          <small id="empty_cpassword"></small>
+          <button onclick="submit_btn()">SIGN UP</button>
+          <h3 id="abc">Already a user? <u onclick="logIn()">Sign In here</u></h3>
+        </div>
+    </div>
+  </body>
+</html>
+<script>
+  let userDataArr = JSON.parse(localStorage.getItem("userData"))||[];
+let submit_btn = () => {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phoneNo = document.getElementById("phone").value;
+    let address = document.getElementById("address").value;
+    let pincode = document.getElementById("pincode").value;
+    let password = document.getElementById("password").value;
+    let cpassword = document.getElementById("cpassword").value;
+
+
+    let userDataObj = {
+        name, email, phoneNo, address, pincode, password, cpassword
+    }
+
+    let flag=true;
+    if (name == "" || !name.includes(" ")) {
+        document.getElementById("empty_name").textContent = "Hi, we’re KSR. What’s your full name?";
+        flag = false;
+    } else {
+        document.getElementById("empty_name").textContent = null;
+    }
+
+    if (email == "" || !email.includes("@")) {
+        document.getElementById("empty_email").textContent = "You’ll sign into KSR with this email address.";
+        flag = false;
+    } else {
+        document.getElementById("empty_email").textContent = null;
+    }
+
+    if (address == "" || address.includes(0) || address.includes(1) || address.includes(2) || address.includes(3) || address.includes(4) || address.includes(5) || address.incaludes(6) || address.includes(7) || address.includes(8) || address.includes(9)) {
+        document.getElementById("empty_address").textContent = "What’s your address?";
+        flag = false;
+    } else {
+        document.getElementById("empty_address").textContent = null;
+    }
+
+    if (phoneNo.length < 10 || phoneNo.length > 10) {
+        document.getElementById("empty_phone").textContent = "What's your number? We won't share it with anyone.";
+        flag = false;
+    } else {
+        document.getElementById("empty_phone").textContent = null;
+    }
+
+    if (pincode=="" || pincode.length>6 || pincode.length<6){
+      document.getElementById("empty_pincode").textContent="A valid pincode is required.";
+    }else{
+      document.getElementById("empty_pincode").textContent=null;
+    }
+
+    if ((password=="")||(password.length < 8) ||( !password.includes("a") && !password.includes("b") && !password.includes("c") && !password.includes("k") && !password.includes("s") && !password.includes("d") && !password.includes("l") && !password.includes("t") && !password.includes("e") && !password.includes("m") && !password.includes("u") && !password.includes("f") && !password.includes("n") && !password.includes("v") && !password.includes("g") && !password.includes("o") && !password.includes("w") && !password.includes("h") && !password.includes("p") && !password.includes("x") && !password.includes("i") && !password.includes("q") && !password.includes("y") && !password.includes("j") && !password.includes("r") && !password.includes("z")) || (!password.includes(0) && !password.includes(1) && !password.includes(2) && !password.includes(3) && !password.includes(4) && !password.includes(5) && !password.includes(6) && !password.includes(7) && !password.includes(8) && !password.includes(9))){
+        document.getElementById("empty_password").textContent="A valid password is required.";
+        flag=false;
+    }else{
+        document.getElementById("empty_password").textContent=null;
+    }
+        
+    if(cpassword != password){
+        document.getElementById("empty_cpassword").textContent="Passwords do not match.";
+        flag=false;
+    }else{
+        document.getElementById("empty_cpassword").textContent=null;
+    }
+
+    
+    if (flag === true) {
+        userDataArr.push(userDataObj);
+        console.log(userDataArr);
+        localStorage.setItem("userData", JSON.stringify(userDataArr));
+        setTimeout(function(){
+            nextWindow();
+        },1000)
+    }
+}
+
+function nextWindow(){
+    window.location.href="signinPage.html";
+}
+
+
+  function logIn(){
+        window.location.href="signinPage.html";
+    }
+</script>
